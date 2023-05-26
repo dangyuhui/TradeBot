@@ -95,7 +95,9 @@ public class Trade {
 
     //Checks if there is a new highest price for the trade or if the trade has dropped below the stoploss.
     public void update(double newPrice, int confluence) {
-        if (newPrice > high) high = newPrice;
+        if (newPrice > high) {
+            high = newPrice;
+        }
 
         if (getProfit() > TAKE_PROFIT) {
             explanation += "Closed due to: Take profit";

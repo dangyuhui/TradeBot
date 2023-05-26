@@ -5,6 +5,7 @@ import com.binance.api.client.domain.general.FilterType;
 import com.binance.api.client.domain.general.SymbolFilter;
 import system.ConfigSetup;
 import system.Formatter;
+import system.OAuthInterceptor;
 import trading.*;
 
 import java.io.File;
@@ -77,6 +78,7 @@ public final class Live {
                     } else System.out.println("Secret API is incorrect, enter again.");
                 } else System.out.println("Incorrect API, enter again.");
             }
+            OAuthInterceptor oAuthInterceptor = new OAuthInterceptor("as", "samples");
             localAccount = new LocalAccount(apiKey, apiSecret);
         }
 

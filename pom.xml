@@ -20,10 +20,22 @@
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>com.github.binance-exchange</groupId>
-            <artifactId>binance-java-api</artifactId>
-            <version>master-SNAPSHOT</version>
+            <groupId>com.binance.api</groupId>
+            <artifactId>binance-api-client</artifactId>
+            <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.binance</groupId>
+            <artifactId>binance-futures-connector-java</artifactId>
+            <version>v3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.binance</groupId>
+            <artifactId>binance-connector-java</artifactId>
+            <version>3.0.0rc1</version>
+        </dependency>
+
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

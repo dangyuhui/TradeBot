@@ -4,6 +4,7 @@ import com.binance.api.client.domain.account.Account;
 import com.binance.api.client.exception.BinanceApiException;
 import system.ConfigSetup;
 import system.Formatter;
+import system.OAuthInterceptor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,9 @@ public class LocalAccount {
         wallet = new ConcurrentHashMap<>();
         tradeHistory = new ArrayList<>();
         activeTrades = new CopyOnWriteArrayList<>();
+        OAuthInterceptor oAuthInterceptor = new OAuthInterceptor("!","2");
+
+        //获取当前账户信息
         realAccount = CurrentAPI.get().getAccount();
         if (!realAccount.isCanTrade()) {
             System.out.println("Can't trade!");

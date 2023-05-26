@@ -7,7 +7,7 @@ public final class CurrentAPI {
     private static BinanceApiClientFactory factory;
 
     public static void login(String apiKey, String secretKey) {
-        factory = BinanceApiClientFactory.newInstance(apiKey, secretKey);
+        factory = BinanceApiClientFactory.newInstance(apiKey, secretKey,true,false);
     }
 
     public static BinanceApiClientFactory getFactory() {

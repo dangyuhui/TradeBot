@@ -93,7 +93,9 @@ public class BuySell {
                 + currency.getPair() + "), at " + Formatter.formatDecimal(trade.getEntryPrice())
                 + ", " + trade.getExplanation();
         System.out.println(message);
-        if (Mode.get().equals(Mode.BACKTESTING)) currency.appendLogLine(message);
+        if (Mode.get().equals(Mode.BACKTESTING)) {
+            currency.appendLogLine(message);
+        }
     }
 
     //Used by trade
@@ -137,11 +139,15 @@ public class BuySell {
                 + ", with " + Formatter.formatPercent(trade.getProfit()) + " profit"
                 + "\n------" + trade.getExplanation();
         System.out.println(message);
-        if (Mode.get().equals(Mode.BACKTESTING)) trade.getCurrency().appendLogLine(message);
+        if (Mode.get().equals(Mode.BACKTESTING)) {
+            trade.getCurrency().appendLogLine(message);
+        }
     }
 
     private static double nextAmount() {
-        if (Mode.get().equals(Mode.BACKTESTING)) return localAccount.getFiat();
+        if (Mode.get().equals(Mode.BACKTESTING)) {
+            return localAccount.getFiat();
+        }
         return Math.min(localAccount.getFiat(), localAccount.getTotalValue() * MONEY_PER_TRADE);
     }
 

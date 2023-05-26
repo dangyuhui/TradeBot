@@ -27,7 +27,9 @@ public class SMA implements Indicator {
 
     @Override
     public void init(List<Double> closingPrices) {
-        if (period > closingPrices.size()) return;
+        if (period > closingPrices.size()) {
+            return;
+        }
 
         //Initial sum
         for (int i = closingPrices.size() - period - 1; i < closingPrices.size() - 1; i++) {
